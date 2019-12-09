@@ -13,11 +13,11 @@
     <title>Jyan Comics</title>
     <!--additional css-->
   </head>
-<body onmousemove = "perspective(event)">
-    <!--background image master div-->
-  <div id = "master" class = "position-relative" onscroll = "navcheck()">
-    <div class="bg">
-    	<div id ="navigation">
+  <body style = "overflow: none;">
+    <!--the master div class is the scrollable area. If the navbar is at the top, it docks.-->
+    <div id ="master" class = "position-relative" onscroll = "navcheck()" style = "background-color: rgb(0, 48, 0); margin:auto; overflow:none">
+        <!--navbar-->
+ <div id ="navigation">
         <nav class = "navbar navbar-expand-lg">
           <!--logo goes here-->
                 <a class="d-flex navbar-brand justify-content-lg-center logo" href = "index.html">
@@ -29,28 +29,41 @@
                     Menu
                   </button>
                   <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="homepage.html">Home</a>
+                    <a class="dropdown-item" href="homepage.html">Jyan Comic Top Page</a>
                     <a class="dropdown-item" href="comic.html">Comic 1</a>
                   </div>
                 </div>
           <div class ="collapse navbar-collapse" id="navbarNavAltMarkup">
-      	    <div class="navbar-nav">
-	      		<a class="nav-item nav-link" href="homepage.html">Home<span class="sr-only">(current)</span></a>
-	      		<a class="nav-item nav-link" href="comic.html">Comic 1</a>
-	    	</div>
+            <div class="navbar-nav">
+                <a class="nav-item nav-link" href="homepage.html">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link active" href="#">Comic 1</a>
+            </div>
           </div>
         </nav>
     </div>
-      <!--strip with text-->
-      <img id="layer1" src="blue.jpg" alt ="placeholder blue sky">
-      <img id="layer2" src="mountain.png" alt ="Mountains">
-      <div class="strip d-flex flex-column align-items-center justify-content-start pr-2 justify-content-center pb-5">
-        <p id="quote" class="title text-center"></p>
-        <p id="person" class="subtitle text-center "></p>
-        <a class="btn btn-light" href="homepage.html">Jump in</a>
-      </div>
-    </div>
+    <!--parent class is the black rectangle with all the content.-->
+    <div class="row parent d-flex justify-content-center" style = "max-width:1350px; margin:auto;">
+        <img src="banner.png" style = "width:100%" alt ="comic 1 by jason Yang">
+        <!--page selectors-->
+    <div class="d-flex justify-content-between" style = "display:inline">
+            <div class="p-2 bd-highlight">
+                <a class="btn btn-light disabled">Previous page</a>
+            </div>
+        <div class="p-2 bd-highlight">                
+            <div class="dropdown">
+                <button class="btn text-black dropdown-toggle bg-white" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Episode 1
+                </button>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item disabled" href="comic.html">Episode 1</a>
+                        <a class="dropdown-item" href="comic2.html">Episode 2</a>
+                    </div>
+                </div>
 
+        </div>
+                    <div class="p-2 bd-highlight"><a class="btn btn-light" href="comic2.html">Next page</a></div>
+	</div>
+    <a style = "width:100%" href = "comic2.html"><img src="comic.jpg" style = "width:100%" alt ="poorly drawn proof of concept comic strip part 1"></a>
     <!--Footer-->
     <div id = "footer">
     <footer class="page-footer font-small teal pt-4">
@@ -75,60 +88,15 @@
         </div>
         <!-- Copyright -->
         <div class="footer-copyright text-center py-3" style = "background-color: rgb(0, 48, 0)">
-          Images courtesy of pixabay.com and pexels.com
+            Images courtesy of pixabay.com and pexels.com
         </div>
       </footer>
     </div>
-    
-
-
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script src="script.js"></script>
-    <script>
-          //random quote generator
-    window.addEventListener('load', randomQuote);
-    function randomQuote(){
-      var q = document.getElementById("quote");
-      var p = document.getElementById("person");
-      var randomNumber = Math.floor((Math.random() * 6) + 1) - 1;
-      var quotes = ['"Leave your stupid comments in your pocket!"', '"Oh, hi, Mark."','"I don\'t wanna talk about it."','"I agree with that."', '"Where\'s my money, Denny?"','"Cheep cheep cheep cheep!"'];
-      var characters = ['-Mark', '-Johnny','-Lisa','-Steven','-Chris R','-Denny'];
-      q.innerHTML = quotes[randomNumber];
-      p.innerHTML = characters[randomNumber];
-    }
-    //in order to prevent seeing the white behind the image, this function
-    //checks the height and width of the window and adjusts the image dimensions
-    //accordingly.
-    window.addEventListener('resize', correct);
-    window.addEventListener('load', correct);
-    function correct(){
-      var w = window.innerWidth;
-      var h = window.innerHeight;
-      var layer1 = document.getElementById("layer1");
-      if(w/h > 16/9){
-        layer1.style.width = "105%";
-        layer1.style.height = "auto";
-        layer2.style.width = "105%";
-        layer2.style.height = "auto";
-        layer1.style.maxHeight ="none";
-        layer1.style.maxWidth = w +"px";
-
-      }else{
-        layer1.style.width = "auto";
-        layer1.style.height = "110%";
-        layer2.style.width = "auto";
-        layer2.style.height = "110%";
-        layer1.style.maxHeight = h +"px";
-        layer1.style.maxWidth = "none";
-      }
-      layer1.style.maxHeight = layer2.style.maxHeight;
-      layer1.style.maxWidth = layer2.style.maxHeight;
-    }
-    </script>
-    </div>
-  </body>
+    </body>
 </html>
