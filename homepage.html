@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <!-- strip fills intire screen at lg.-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Dark green #1F7E09-->
+    <link rel="stylesheet" href="styles.css">
+    <title>Jyan Comics</title>
+    <!--additional css-->
+  </head>
+  <body style = "overflow: none;">
+    <!--the master div class is the scrollable area. If the navbar is at the top, it docks.-->
+    <div id ="master" class = "position-relative" onscroll = "navcheck()" style = "background-color: rgb(0, 48, 0); margin:auto; max-width:1500px; overflow:none">
+        <div id ="navigation">
+            <nav class = "navbar navbar-expand-lg">
+                <!--logo goes here-->
+                <a class="d-flex navbar-brand justify-content-lg-center logo" href = "index.html">
+                    <img id = "logo" src="logo.png" alt = "jyan comic logo">
+                </a>
+                <button id = "logo" class = "navbar-toggler" type = "button" data-toggle="collapse" aria-label="Logo">
+                <span class = "navbar-toggle-icon"></span>
+                </button>
+                <div class ="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-item nav-link" href="homepage.html">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-item nav-link" href="#">Features</a>
+                        <a class="nav-item nav-link" href="#">Pricing</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <!--slide show-->
+    <div class="row parent d-flex justify-content-center">
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" alt = "slide show">
+        <div class="carousel-inner">
+            <!--individual item-->
+            <div class="carousel-item active">
+                <img class="d-block w-100" src="carousel.jpg" alt="First slide">
+                  <div class="carousel-caption d-none d-lg-block">
+    				<h5>the end of the losers</h5>
+    				<p>who will die?</p>
+  				</div>
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100" src="carousel.jpg" alt="Second slide">
+                <div class="carousel-caption">
+    				<h5>the end of the losers</h5>
+    				<p>who will die?</p>
+  				</div>               
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100" src="carousel.jpg" alt="Third slide">
+                <div class="carousel-caption d-none d-md-block">
+    				<h5>the end of the losers</h5>
+    				<p>who will die?</p>
+  				</div>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+	<div class="container" style = "margin:0; padding:0">
+  		<div class="row" style = "margin:0; padding:0">
+    	<div class="col-sm">
+    		<div class  = "info">
+    		<h3>Featured comic</h3>
+      		<p>Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book.
+      		</p>
+      	</div>
+    	</div>
+    	<div class="col-sm">
+      		<img class = "info" src="newcomic.jpg" style = "width:100%" alt="cover of new comic">
+    	</div>
+  		</div>
+	</div>
+    </div>
+	</div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+    </body>
+</html>

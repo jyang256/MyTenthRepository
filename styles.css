@@ -1,0 +1,124 @@
+body, html {
+  height: 100%;
+/*  overflow: hidden;*/
+}
+.bg { 
+  height: 100%; 
+}
+nav a{
+  color:white;
+  position:relative;
+  border-radius: 5px;
+}
+nav a:not(.logo):hover{
+  background-color: white;
+  transition: 0.5s;
+}
+#master{
+  overflow-x: hidden;
+  height: 100%;
+}
+.strip{
+  height:105%;
+  width:40%;
+  background: rgba(0, 46, 0, 0.6);
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+}
+.title{
+  color: white;
+  z-index: 100;
+  display: inline;
+  font-size: 30px;
+  margin-bottom: 0;
+}
+#footer{
+  width:100%;
+  background: darkgreen;
+  position: relative;
+  z-index: 20;
+  color:white;
+  margin-bottom: 0;
+  box-shadow: 0 0 10px black;
+}
+.subtitle{
+  opacity: 1;
+  color: white;
+  z-index: 100;
+  display: inline;
+  font-size: 20px;
+}
+#layer1{
+  position: fixed;
+  z-index: -2;
+  width: 150%;
+}
+#layer2{
+  position: fixed;
+  z-index: -1;
+  width: 150%;
+}
+.carousel{
+  overflow:hidden;
+  height: 500px;
+  width:1500px;
+  background-color:white;
+}
+.carousel-item img{
+  min-height: 500px;
+  display:block;
+}
+#navigation{
+  position:absolute;
+  display: block;
+  z-index: 101;
+  color: black;
+  background-color: darkgreen;
+  box-shadow: 0 0 10px black;
+  width: 92%;
+  margin-left: 4%;
+  top: 30px;
+  margin-right: 4%;
+  border-radius: 5px;
+  padding:0;
+}
+.parent{
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+  box-shadow: 0 0 10px black;
+  background-color: black;
+  color:white;
+}
+.info{
+  margin:0;
+  margin-top:16px;
+}
+#logo{
+  height:70px;
+  position: static;
+  margin-top:-30px;
+  margin-bottom:-30px;
+
+}
+@media only screen and (max-width: 991px) {
+  .strip{
+    width: 100%;
+  }
+  #navigation{
+    margin: 0;
+    top: 0;
+    width: 100%;
+    border-radius: 0;
+    position: sticky;
+  }
+  .parent{
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .carousel-item{
+    height: 400px;
+  }
+}
